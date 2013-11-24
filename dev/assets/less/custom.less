@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Generic styles
+   ========================================================================== */
+
+html {
+  font-size: 62.5%; // Needed to make 1em equal 10px
+}
+
+body {
+  font-family: Arial, sans-serif;
+  .font-size(16);
+
+  background: #fff;
+  color: #1b4c68;
+}
+
+* {
+  .box-sizing(border-box);
+}
+
+
+/* Typography
+   ================================================= */
+
+h1, h2, h3, h4, h5, h6 {
+}
+h2 {
+  .font-size(24);
+}
+h3 {
+  .font-size(20);
+}
+h4 {
+  .font-size(18);
+}
+p {
+
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+
+/* Images
+   ================================================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.lt-ie9 img {
+  width: auto;
+}
+
+
+/* Links
+   ================================================= */
+
+
+/* Scaffolding
+   ================================================= */
+
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  max-width: 980px;
+}
+
+
+/* Content
+   ================================================= */
+
+
+/* ==========================================================================
+   Modules
+   ========================================================================== */
+
+  /* Transactions table
+     ================================================= */
+
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+
+
+
+   /* ==========================================================================
+      EXAMPLE Media Queries for Responsive Design.
+      These examples override the primary ('mobile first') styles.
+      Modify as content requires.
+      ========================================================================== */
+
+   @media only screen and (min-width: 35em) {
+       /* Style adjustments for viewports that meet the condition */
+   }
+
+   @media print,
+          (-o-min-device-pixel-ratio: 5/4),
+          (-webkit-min-device-pixel-ratio: 1.25),
+          (min-resolution: 120dpi) {
+       /* Style adjustments for high resolution devices */
+   }

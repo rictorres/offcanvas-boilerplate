@@ -1,0 +1,90 @@
+/* ==========================================================================
+	 Mixins
+	 ========================================================================== */
+/* Utilities
+	 ========================================================================== */
+/* CSS 3 Properties
+	 ========================================================================== */
+/* Gradients
+	 ========================================================================== */
+/* Retina images
+	 ========================================================================== */
+/* Responsive image
+	 ========================================================================== */
+/* ==========================================================================
+   Generic styles
+   ========================================================================== */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  background: #fff;
+  color: #1b4c68;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* Typography
+   ================================================= */
+h2 {
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+h3 {
+  font-size: 20px;
+  font-size: 2rem;
+}
+h4 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+/* Images
+   ================================================= */
+img {
+  max-width: 100%;
+  height: auto;
+}
+.lt-ie9 img {
+  width: auto;
+}
+/* Links
+   ================================================= */
+/* Scaffolding
+   ================================================= */
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 980px;
+}
+/* Content
+   ================================================= */
+/* ==========================================================================
+   Modules
+   ========================================================================== */
+/* Transactions table
+     ================================================= */
+/* ==========================================================================
+   Header
+   ========================================================================== */
+/* ==========================================================================
+      EXAMPLE Media Queries for Responsive Design.
+      These examples override the primary ('mobile first') styles.
+      Modify as content requires.
+      ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
