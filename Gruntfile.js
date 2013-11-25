@@ -83,9 +83,17 @@ module.exports = function(grunt) {
     },
 
     autoprefixer: {
+      dev: {
+        options: {
+          browsers: ['last 2 versions', '> 10%', 'ie 8']
+        },
+        files: {
+          '<%= cfg.dev %>/<%= cfg.css %>/main.css': '<%= cfg.dev %>/<%= cfg.css %>/main.css'
+        }
+      },
       dist: {
         options: {
-          browsers: ['last 2 versions', '> 10%', 'ie 8', 'ie 7']
+          browsers: ['last 2 versions', '> 10%', 'ie 8']
         },
         files: {
           '<%= cfg.dist %>/<%= cfg.css %>/main.css': '<%= cfg.dist %>/<%= cfg.css %>/main.css'
@@ -136,7 +144,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['<%= cfg.dev %>/<%= cfg.less %>/*.less'],
-        tasks: ['less']
+        tasks: ['less', 'autoprefixer:dev']
       },
       js: {
         files: ['<%= cfg.dev %>/<%= cfg.js %>/**/*.js'],
@@ -166,6 +174,6 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'uglify', 'copy:dist', 'usemin', 'autoprefixer', 'csso', 'htmlcompressor']);
+  grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'uglify', 'copy:dist', 'usemin', 'autoprefixer:dist', 'csso', 'htmlcompressor']);
   grunt.registerTask('server', ['concurrent:std']);
 };
