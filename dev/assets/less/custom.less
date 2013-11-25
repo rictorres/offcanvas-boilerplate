@@ -88,6 +88,7 @@ img {
 }
 
 .sidebar-left {
+  left: (-@sidebar-width);
 
   .no-js & {
     left: 0;
@@ -95,9 +96,34 @@ img {
 }
 
 .sidebar-right {
+  right: (-@sidebar-width);
 
   .no-js & {
     right: 0;
+  }
+}
+
+.sidebar-active {
+
+  &.sidebar-left {
+    left: 0;
+  }
+
+  &.sidebar-right {
+    right: 0;
+  }
+}
+
+.sidebar-push {
+  position: relative;
+  overflow: hidden;
+
+  &.sidebar-toright {
+    left: @sidebar-width;
+  }
+
+  &.sidebar-toleft {
+    right: @sidebar-width;
   }
 }
 
@@ -115,7 +141,6 @@ img {
    ========================================================================== */
 
 .content {
-  margin: 0 @sidebar-width;
   padding: 20px;
 
   .no-js & {
