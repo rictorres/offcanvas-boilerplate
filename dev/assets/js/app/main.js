@@ -1,7 +1,5 @@
 ;(function(window, document, $) {
 
-  $('html').removeClass('no-js');
-
   $('.btn-sidebar-toggle').on('click', function() {
     var target = $(this).data('target'),
         fx     = $(this).data('fx'),
