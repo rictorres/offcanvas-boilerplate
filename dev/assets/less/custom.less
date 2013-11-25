@@ -1,4 +1,9 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
 @sidebar-width: 240px;
+
 
 /* ==========================================================================
    Generic styles
@@ -112,8 +117,26 @@ video {
   }
 }
 
+// progressive enhancement,
+// because we can only be sure that the user has the most basic setup,
+// also we use javascript to detect support for css transforms.
+// graceful degradation for the no-javascript fallback
+
 .sidebar-left {
   left: (-@sidebar-width);
+
+  &.sidebar-active {
+    left: 0;
+  }
+
+  .csstransforms & {
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+
+    &.sidebar-active {
+      transform: translate3d(0, 0, 0);
+    }
+  }
 
   .no-js & {
     left: 0;
@@ -123,21 +146,28 @@ video {
 .sidebar-right {
   right: (-@sidebar-width);
 
+  &.sidebar-active {
+    right: 0;
+  }
+
+  .csstransforms & {
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+
+    &.sidebar-active {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
   .no-js & {
     right: 0;
   }
 }
 
-.sidebar-active {
-
-  &.sidebar-left {
-    left: 0;
-  }
-
-  &.sidebar-right {
-    right: 0;
-  }
-}
+// the only way to optimise performance for push sidebars
+// is to put it inside another container.
+// doing that would affect our markup semantic :(
+// so i'm staying with left/right positioning.
 
 .sidebar-push {
   position: relative;
