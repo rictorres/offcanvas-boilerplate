@@ -1,6 +1,6 @@
-'use strict';
-
 module.exports = function(grunt) {
+
+  'use strict';
 
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -83,9 +83,17 @@ module.exports = function(grunt) {
     },
 
     autoprefixer: {
+      dev: {
+        options: {
+          browsers: ['last 2 versions', '> 10%', 'ie 8']
+        },
+        files: {
+          '<%= cfg.dev %>/<%= cfg.css %>/main.css': '<%= cfg.dev %>/<%= cfg.css %>/main.css'
+        }
+      },
       dist: {
         options: {
-          browsers: ['last 2 versions', '> 10%', 'ie 8', 'ie 7']
+          browsers: ['last 2 versions', '> 10%', 'ie 8']
         },
         files: {
           '<%= cfg.dist %>/<%= cfg.css %>/main.css': '<%= cfg.dist %>/<%= cfg.css %>/main.css'
@@ -104,6 +112,16 @@ module.exports = function(grunt) {
     jshint: {
       files: ['Gruntfile.js', '<%= cfg.dev %>/<%= cfg.js %>/**/*.js'],
       options: {
+        ignores: ['<%= cfg.dev %>/<%= cfg.js %>/libs/jquery-2.0.3.js'],
+        curly: true,
+        eqeqeq: true,
+        immed: true,
+        newcap: true,
+        // undef: true,
+        unused: true,
+        eqnull: true,
+        sub: true,
+        browser: true,
         globals: {
           jQuery: true,
           console: true,
@@ -136,10 +154,10 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['<%= cfg.dev %>/<%= cfg.less %>/*.less'],
-        tasks: ['less']
+        tasks: ['less', 'autoprefixer:dev']
       },
       js: {
-        files: ['<%= cfg.dev %>/<%= cfg.js %>/**/*.js'],
+        files: ['Gruntfile.js', '<%= cfg.dev %>/<%= cfg.js %>/**/*.js'],
         tasks: ['jshint']
       }
     },
@@ -166,6 +184,6 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'uglify', 'copy:dist', 'usemin', 'autoprefixer', 'csso', 'htmlcompressor']);
+  grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'uglify', 'copy:dist', 'usemin', 'autoprefixer:dist', 'csso', 'htmlcompressor']);
   grunt.registerTask('server', ['concurrent:std']);
 };
