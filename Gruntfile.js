@@ -1,6 +1,6 @@
-'use strict';
-
 module.exports = function(grunt) {
+
+  'use strict';
 
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -112,6 +112,16 @@ module.exports = function(grunt) {
     jshint: {
       files: ['Gruntfile.js', '<%= cfg.dev %>/<%= cfg.js %>/**/*.js'],
       options: {
+        ignores: ['<%= cfg.dev %>/<%= cfg.js %>/libs/jquery-2.0.3.js'],
+        curly: true,
+        eqeqeq: true,
+        immed: true,
+        newcap: true,
+        // undef: true,
+        unused: true,
+        eqnull: true,
+        sub: true,
+        browser: true,
         globals: {
           jQuery: true,
           console: true,
@@ -147,7 +157,7 @@ module.exports = function(grunt) {
         tasks: ['less', 'autoprefixer:dev']
       },
       js: {
-        files: ['<%= cfg.dev %>/<%= cfg.js %>/**/*.js'],
+        files: ['Gruntfile.js', '<%= cfg.dev %>/<%= cfg.js %>/**/*.js'],
         tasks: ['jshint']
       }
     },
