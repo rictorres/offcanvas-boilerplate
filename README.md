@@ -2,7 +2,9 @@
 
 
 ## Building
-```
+```bash
+$ git clone https://github.com/rictorres/dubizzle-test
+$ cd dubizzle-test
 $ npm install
 $ grunt build
 ```
