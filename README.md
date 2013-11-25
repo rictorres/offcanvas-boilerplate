@@ -9,7 +9,7 @@ $ grunt build
 
 ## Guidelines
 
-Please find CSS guidelines at `assets/less/guidelines.less`
+Please find CSS guidelines on [GUIDELINES.md](https://github.com/rictorres/dubizzle-test/blob/master/GUIDELINES.md)
 
 
 ## Author
