@@ -1,3 +1,6 @@
+# CSS Guidelines
+
+```css
 
 .declaration-order {
   /* Positioning */
@@ -8,7 +11,7 @@
   left: 0;
   z-index: 100;
 
-  /* Box-model */
+  /* Box-model (ish) */
   display: block;
   float: right;
   width: 100px;
@@ -59,3 +62,4 @@
       1px 1px 1px #000,
       2px 2px 1px 1px #ccc inset;
 }
+```
