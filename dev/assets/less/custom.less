@@ -1,3 +1,5 @@
+@sidebar-width: 240px;
+
 /* ==========================================================================
    Generic styles
    ========================================================================== */
@@ -57,7 +59,6 @@ img {
 }
 
 
-
 /* Content
    ================================================= */
 
@@ -66,18 +67,62 @@ img {
    Modules
    ========================================================================== */
 
+/* Sidebar
+   ================================================= */
 
+.sidebar {
+  position: fixed;
+  top: 0;
+
+  width: @sidebar-width;
+  height: 100%;
+
+  background: lightgreen;
+
+  .no-js & {
+    position: static;
+
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sidebar-left {
+
+  .no-js & {
+    left: 0;
+  }
+}
+
+.sidebar-right {
+
+  .no-js & {
+    right: 0;
+  }
+}
+
+.btn-sidebar-toggle {
+
+}
+
+.no-js .btn-sidebar-toggle {
+  display: none;
+}
 
 
 /* ==========================================================================
-   Header
+   Content
    ========================================================================== */
 
+.content {
+  margin: 0 @sidebar-width;
+  padding: 20px;
 
-
-
-@media only screen and (min-width: 35em) {
+  .no-js & {
+    margin: 0;
+  }
 }
+
 
 @media print,
 (-o-min-device-pixel-ratio: 5/4),
