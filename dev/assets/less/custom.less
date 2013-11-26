@@ -195,12 +195,17 @@ video {
   }
 }
 
-.btn-sidebar-toggle {
-
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 
-.no-js .btn-sidebar-toggle {
-  display: none;
+.sidebar-content-item {
+  // margin: auto;
+  background: #aaa;
 }
 
 
@@ -214,6 +219,14 @@ video {
   .no-js & {
     margin: 0;
   }
+}
+
+.btn-sidebar-toggle {
+
+}
+
+.no-js .btn-sidebar-toggle {
+  display: none;
 }
 
 
