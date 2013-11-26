@@ -52,10 +52,6 @@ h4 {
   .font-size(18);
 }
 
-p {
-
-}
-
 
 /* Images
    ================================================= */
@@ -157,7 +153,11 @@ video {
 
   background: @sidebar-bg;
 
-  transition: all @transition-duration ease;
+  // transition: all @transition-duration ease;
+
+  .csstransforms & {
+    transition: transform @transition-duration ease;
+  }
 
   .no-js & {
     position: static;
@@ -274,7 +274,7 @@ video {
   justify-content: space-between;
   width: 100%;
 
-  transition: all @transition-duration ease;
+  transition: transform @transition-duration ease;
 
   .has-sidebar-toright & {
     transform: translate3d(@sidebar-width, 0, 0);
@@ -302,15 +302,12 @@ video {
   background-color: @sidebar-bg;
   background-color: fade(@sidebar-bg, 50%);
 
-  transition: all 0.3s ease-out;
+  transition: all @transition-duration ease-out;
   box-sizing: content-box;
 
   .has-sidebar-open & {
     pointer-events: none;
   }
-}
-.btn-sidebar-toggle.is-active {
-  background-color: @sidebar-bg;
 }
   .btn-sidebar-toggle:hover,
   .btn-sidebar-toggle:focus {
@@ -328,7 +325,7 @@ video {
   .btn-sidebar-toggle span,
   .btn-sidebar-toggle span:before,
   .btn-sidebar-toggle span:after {
-    .transition(all 0.8s);
+    transition: all 0.8s;
   }
 
     .btn-sidebar-toggle span:before,
