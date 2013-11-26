@@ -14,7 +14,7 @@
 html {
   // height: 100%;
 
-  font-size: 62.5%; // Needed to make 1em equal 10px
+  font-size: 62.5%;
 }
 
 body {
@@ -120,7 +120,10 @@ video {
 
     content: '';
     opacity: 0;
-    transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+    transition:
+      opacity 0.5s,
+      width 0.1s 0.5s,
+      height 0.1s 0.5s;
   }
 
   .has-sidebar-open & {
@@ -299,8 +302,8 @@ video {
   background-color: @sidebar-bg;
   background-color: fade(@sidebar-bg, 50%);
 
-  .transition(all 0.3s ease-out);
-  .box-sizing(content-box);
+  transition: all 0.3s ease-out;
+  box-sizing: content-box;
 
   .has-sidebar-open & {
     pointer-events: none;
@@ -348,19 +351,11 @@ video {
     background: transparent;
   }
     .btn-sidebar-toggle.is-active span:before {
-      -webkit-transform: rotate(45deg) translate(.5em, .4em);
-         -moz-transform: rotate(45deg) translate(.5em, .4em);
-          -ms-transform: rotate(45deg) translate(.5em, .4em);
-           -o-transform: rotate(45deg) translate(.5em, .4em);
-              transform: rotate(45deg) translate(.5em, .4em);
+      transform: rotate(45deg) translate(.5em, .4em);
     }
 
     .btn-sidebar-toggle.is-active span:after {
-      -webkit-transform: rotate(-45deg) translate(.45em, -.35em);
-         -moz-transform: rotate(-45deg) translate(.45em, -.35em);
-          -ms-transform: rotate(-45deg) translate(.45em, -.35em);
-           -o-transform: rotate(-45deg) translate(.45em, -.35em);
-              transform: rotate(-45deg) translate(.45em, -.35em);
+      transform: rotate(-45deg) translate(.45em, -.35em);
     }
 
 .no-js .btn-sidebar-toggle {
