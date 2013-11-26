@@ -5,10 +5,10 @@
         fx     = $(this).data('fx'),
         dir    = $(this).data('dir');
 
-    $('.' + target).toggleClass('sidebar-active'); // toggle active class on the sidebar
-    $('.container').toggleClass('sidebar-open'); // toggle open class on the container
-    $('.container').toggleClass('sidebar-' + fx);
-    $('.container').toggleClass('sidebar-' + dir);
+    $('.' + target).toggleClass('is-active'); // toggle active class on the sidebar
+    $('.container').toggleClass('has-sidebar-open'); // toggle open class on the container
+    $('.container').toggleClass('has-sidebar-' + fx);
+    $('.container').toggleClass('has-sidebar-' + dir);
   });
 
 }(this, this.document, this.jQuery));

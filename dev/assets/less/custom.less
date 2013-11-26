@@ -3,6 +3,7 @@
    ========================================================================== */
 
 @sidebar-width: 240px;
+@sidebar-bg: #f35;
 @transition-duration: 0.3s;
 
 
@@ -105,6 +106,7 @@ video {
   transition: all @transition-duration ease;
 }
 
+
 /* ==========================================================================
    Modules
    ========================================================================== */
@@ -120,7 +122,7 @@ video {
   width: @sidebar-width;
   height: 100%;
 
-  background: lightgreen;
+  background: @sidebar-bg;
 
   transition: all @transition-duration ease;
 
@@ -140,7 +142,7 @@ video {
 .sidebar-left {
   left: (-@sidebar-width);
 
-  &.sidebar-active {
+  &.is-active {
     left: 0;
   }
 
@@ -148,7 +150,7 @@ video {
     left: 0;
     transform: translate3d(-100%, 0, 0);
 
-    &.sidebar-active {
+    &.is-active {
       transform: translate3d(0, 0, 0);
     }
   }
@@ -161,7 +163,7 @@ video {
 .sidebar-right {
   right: (-@sidebar-width);
 
-  &.sidebar-active {
+  &.is-active {
     right: 0;
   }
 
@@ -169,7 +171,7 @@ video {
     right: 0;
     transform: translate3d(100%, 0, 0);
 
-    &.sidebar-active {
+    &.is-active {
       transform: translate3d(0, 0, 0);
     }
   }
@@ -179,18 +181,18 @@ video {
   }
 }
 
-// the only way to optimise performance for push sidebars
+// to optimise performance for push sidebars
 // is to put it inside another container.
 // doing that would affect our markup semantic :(
 // so i'm staying with left/right positioning.
 
-.sidebar-push {
+.has-sidebar-push {
 
-  &.sidebar-toright {
+  &.has-sidebar-toright {
     left: @sidebar-width;
   }
 
-  &.sidebar-toleft {
+  &.has-sidebar-toleft {
     left: (-@sidebar-width);
   }
 }
