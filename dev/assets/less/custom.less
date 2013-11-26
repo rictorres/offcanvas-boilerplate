@@ -245,6 +245,7 @@ video {
 }
   .sidebar-content-item {
     background: #aaa;
+    flex-shrink: 0;
   }
 
 
@@ -254,6 +255,10 @@ video {
 
 .content {
   padding: 20px;
+
+  .has-sidebar-open & {
+    overflow: hidden; // prevent scrollbars
+  }
 
   .no-js & {
     margin: 0;
