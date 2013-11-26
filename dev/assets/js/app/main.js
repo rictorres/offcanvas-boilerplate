@@ -4,7 +4,7 @@
       $body      = $('body');
 
   function closeSidebar(event) {
-    if ( $(event.target).hasClass('content') ) {
+    if ( $(event.target).hasClass('content') || $(event.target).hasClass('content-bar') ) {
       $container.removeClass('has-sidebar-toright');
       $container.removeClass('has-sidebar-toleft');
       $container.removeClass('has-sidebar-push');
@@ -14,7 +14,7 @@
       setTimeout( function() {
         $body.removeClass('has-sidebar-open');
       }, 400);
-      $('.content').off('click', closeSidebar);
+      $('.content, .content-bar').off('click', closeSidebar);
     }
   }
 
@@ -34,7 +34,7 @@
 
     setTimeout( function() {
       if ( $body.hasClass('has-sidebar-open') ) {
-        $('.content').on('click', closeSidebar);
+        $('.content, .content-bar').on('click', closeSidebar);
       }
     }, 25);
 
