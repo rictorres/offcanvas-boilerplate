@@ -302,14 +302,19 @@ video {
 
   transform: translateZ(0); // force hardware acceleration where available
   transition: all @transition-duration ease-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   .has-sidebar-open & {
     pointer-events: none;
   }
 }
   .btn-sidebar-toggle:hover,
-  .btn-sidebar-toggle:focus {
+  .btn-sidebar-toggle:active {
     background-color: @sidebar-bg;
+
+    .touch & {
+      background-color: fade(@sidebar-bg, 50%);
+    }
   }
   .btn-sidebar-toggle span {
     position: relative;
