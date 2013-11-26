@@ -4,8 +4,7 @@
       $body      = $('body');
 
   function closeSidebar(event) {
-    if ( !$(event.target).hasClass('sidebar') ) {
-
+    if ( $(event.target).hasClass('container') ) {
       $container.removeClass('has-sidebar-toright');
       $container.removeClass('has-sidebar-toleft');
       $container.removeClass('has-sidebar-push');
