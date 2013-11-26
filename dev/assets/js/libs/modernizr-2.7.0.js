@@ -1,5 +1,5 @@
 /* Modernizr 2.7.0 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-csstransforms-touch-shiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes
+ * Build: http://modernizr.com/download/#-flexbox-flexboxlegacy-csstransforms-touch-shiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes
  */
 ;
 
@@ -195,7 +195,18 @@ window.Modernizr = (function( window, document, undefined ) {
           props = (prop + ' ' + (domPrefixes).join(ucProp + ' ') + ucProp).split(' ');
           return testDOMProps(props, prefixed, elem);
         }
-    }    tests['touch'] = function() {
+    }    tests['flexbox'] = function() {
+      return testPropsAll('flexWrap');
+    };
+
+
+    tests['flexboxlegacy'] = function() {
+        return testPropsAll('boxDirection');
+    };
+
+
+
+    tests['touch'] = function() {
         var bool;
 
         if(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
