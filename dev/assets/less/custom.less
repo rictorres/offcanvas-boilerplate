@@ -136,11 +136,8 @@ video {
 
 
 /* ==========================================================================
-   Modules
+   Sidebar
    ========================================================================== */
-
-/* Sidebar
-   ================================================= */
 
 .sidebar {
   position: fixed;
@@ -153,9 +150,12 @@ video {
 
   background: @sidebar-bg;
 
-  // transition: all @transition-duration ease;
+  .no-csstransforms & {
+    transition: all @transition-duration ease;
+  }
 
   .csstransforms & {
+    transform: translateZ(0); // force hardware acceleration where available
     transition: transform @transition-duration ease;
   }
 
@@ -168,7 +168,7 @@ video {
 }
 
 // progressive enhancement,
-// because we can only be sure that the user has the most basic setup,
+// because we can only be sure that the user has the most basic setup!
 // also we use javascript to detect support for css transforms.
 // graceful degradation for the no-javascript fallback
 
@@ -182,10 +182,10 @@ video {
   .csstransforms & {
     left: 0;
 
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
 
     &.is-active {
-      transform: translate3d(0, 0, 0);
+      transform: translateX(0);
     }
   }
 
@@ -204,36 +204,16 @@ video {
   .csstransforms & {
     right: 0;
 
-    transform: translate3d(100%, 0, 0);
+    transform: translateX(100%);
 
     &.is-active {
-      transform: translate3d(0, 0, 0);
+      transform: translateX(0);
     }
   }
 
   .no-js & {
     right: 0;
   }
-}
-
-// to optimise performance for push sidebars
-// is to put it inside another container.
-// doing that would affect our markup semantic :(
-// so i'm staying with left/right positioning.
-
-.has-sidebar-push {
-
-  &.has-sidebar-toright {
-    left: @sidebar-width;
-  }
-
-  &.has-sidebar-toleft {
-    left: (-@sidebar-width);
-  }
-}
-
-.has-sidebar-open {
-  overflow: hidden;
 }
 
 .sidebar-content {
@@ -249,20 +229,31 @@ video {
   }
 
 
-/* ==========================================================================
-   Content
-   ========================================================================== */
+/* styles below are applied to external elements */
 
-.content {
-  padding: 20px;
-
-  .has-sidebar-open & {
-    overflow: hidden; // prevent scrollbars
+.no-csstransforms {
+  .has-sidebar-push.has-sidebar-toright {
+    left: @sidebar-width;
   }
-
-  .no-js & {
-    margin: 0;
+  .has-sidebar-push.has-sidebar-toleft {
+    left: (-@sidebar-width);
   }
+}
+
+.csstransforms {
+  .content {
+    transform: translateZ(0); // force hardware acceleration where available
+  }
+  .has-sidebar-push.has-sidebar-toright .content {
+    transform: translateX(@sidebar-width);
+  }
+  .has-sidebar-push.has-sidebar-toleft .content {
+    transform: translateX((-@sidebar-width));
+  }
+}
+
+.has-sidebar-open {
+  overflow: hidden;
 }
 
 
@@ -280,12 +271,13 @@ video {
   width: 100%;
 
   transition: transform @transition-duration ease;
+  transform: translateZ(0); // force hardware acceleration
 
   .has-sidebar-toright & {
-    transform: translate3d(@sidebar-width, 0, 0);
+    transform: translateX(@sidebar-width);
   }
   .has-sidebar-toleft & {
-    transform: translate3d(-@sidebar-width, 0, 0);
+    transform: translateX(-@sidebar-width);
   }
 }
   .content-bar-top {
@@ -297,18 +289,19 @@ video {
 
 // codepen.io/rictorres/full/ycudz
 .btn-sidebar-toggle {
+  position: relative;
   padding: 1.9em 1.6em;
 
   width: 2em;
   height: auto;
+  box-sizing: content-box;
 
   font-size: 10px;
 
-  background-color: @sidebar-bg;
   background-color: fade(@sidebar-bg, 50%);
 
+  transform: translateZ(0); // force hardware acceleration where available
   transition: all @transition-duration ease-out;
-  box-sizing: content-box;
 
   .has-sidebar-open & {
     pointer-events: none;
@@ -330,7 +323,8 @@ video {
   .btn-sidebar-toggle span,
   .btn-sidebar-toggle span:before,
   .btn-sidebar-toggle span:after {
-    transition: all 0.8s;
+    transform: translateZ(0); // force hardware acceleration where available
+    transition: all 0.4s;
   }
 
     .btn-sidebar-toggle span:before,
@@ -362,6 +356,25 @@ video {
 
 .no-js .btn-sidebar-toggle {
   display: none;
+}
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content {
+  padding: 20px;
+
+  transition: transform @transition-duration ease;
+
+  .has-sidebar-open & {
+    overflow: hidden; // prevent scrollbars
+  }
+
+  .no-js & {
+    margin: 0;
+  }
 }
 
 
