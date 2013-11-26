@@ -255,7 +255,8 @@ video {
   .content-bar-top {
     top: 0;
   }
-  .content-bar-bottom {
+  .content-bar-bottom,
+  .content-bar-bottom .btn-sidebar-toggle {
     bottom: 0;
   }
 
@@ -264,6 +265,7 @@ video {
   position: relative;
   padding: 1.9em 1.6em;
 
+  display: block;
   width: 2em;
   height: auto;
   box-sizing: content-box;
@@ -278,6 +280,20 @@ video {
 
   .has-sidebar-open & {
     pointer-events: none;
+  }
+
+  .no-flexbox.no-flexboxlegacy & {
+    position: absolute;
+
+    &:nth-child(1) {
+      left: 0;
+    }
+    &:nth-child(2) {
+      left: 50%;
+    }
+    &:nth-child(3) {
+      right: 0;
+    }
   }
 }
   .btn-sidebar-toggle:hover,
@@ -298,14 +314,14 @@ video {
     background-color: #fff;
   }
   .btn-sidebar-toggle span,
-  .btn-sidebar-toggle span:before,
-  .btn-sidebar-toggle span:after {
+  .btn-sidebar-toggle span::before,
+  .btn-sidebar-toggle span::after {
     transform: translateZ(0); // force hardware acceleration where available
     transition: all 0.4s;
   }
 
-    .btn-sidebar-toggle span:before,
-    .btn-sidebar-toggle span:after {
+    .btn-sidebar-toggle span::before,
+    .btn-sidebar-toggle span::after {
       position: absolute;
       margin-top: -.6em;
 
