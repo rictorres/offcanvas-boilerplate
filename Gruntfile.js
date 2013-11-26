@@ -83,18 +83,15 @@ module.exports = function(grunt) {
     },
 
     autoprefixer: {
+      options: {
+        browsers: ['last 2 versions', '> 10%', 'android 4', 'ie 8']
+      },
       dev: {
-        options: {
-          browsers: ['last 2 versions', '> 10%', 'ie 8']
-        },
         files: {
           '<%= cfg.dev %>/<%= cfg.css %>/main.css': '<%= cfg.dev %>/<%= cfg.css %>/main.css'
         }
       },
       dist: {
-        options: {
-          browsers: ['last 2 versions', '> 10%', 'ie 8']
-        },
         files: {
           '<%= cfg.dist %>/<%= cfg.css %>/main.css': '<%= cfg.dist %>/<%= cfg.css %>/main.css'
         }
