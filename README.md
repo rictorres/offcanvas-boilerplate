@@ -41,15 +41,15 @@ Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to op
 - Using hardware acceleration whenever possible: `translateZ(0)`
 
 ### Javascript
-- No libraries
+- Support for touch gestures provided by [Hammer.js](https://github.com/EightMedia/hammer.js)
 - When Javascript is disabled or not loaded, the webapp degrades gracefully
 - Using `element.classList` with [fallback](https://gist.github.com/devongovett/1381839) for IE9
 
 
 ## Tested on
 - Android 4.2.2 Stock Browser on Galaxy S4
-- Android 4.2.2 Chrome
-- Android 4.2.2 Firefox 25
+- Android 4.2.2 Chrome 31 on Galaxy S4
+- Android 4.2.2 Firefox 25 on Galaxy S4
 - iOS 7 Safari on iPhone 4
 - iOS 7 Chrome on iPhone 4
 - MacOSX 10.9 Chrome 33
