@@ -128,6 +128,14 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      dist: {
+        files: {
+          '<%= cfg.dist %>/<%= cfg.js %>/shim/classlist.js': ['<%= cfg.dev %>/<%= cfg.js %>/shim/classlist.js']
+        }
+      }
+    },
+
     less: {
       dev: {
         options: {
