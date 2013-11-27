@@ -25,7 +25,7 @@
   <!-- endbuild -->
 
   <!-- build:js assets/js/init.js -->
-  <script src="assets/js/libs/modernizr-2.7.0.js"></script>
+  <script src="assets/js/vendor/modernizr-2.7.0.js"></script>
   <!-- endbuild -->
 
   <meta name="apple-mobile-web-app-title" content="Yaww">
@@ -40,7 +40,7 @@
 
 <body>
 
-  <div class="container">
+  <div class="container" id="container">
 
     <nav class="sidebar  sidebar-left">
       <div class="sidebar-content">
@@ -109,7 +109,8 @@
       <a class="btn-sidebar-toggle  btn-sidebar-toggle-right" data-target="sidebar-right" data-fx="slideover" data-dir="toleft" href="#"><span></span></a>
     </div> <!-- /content-bar -->
 
-    <section class="content">
+
+    <section class="content" id="content">
 
       <header class="content-header" role="banner">
         <h1 class="content-header-title">Yet Another Weather Webapp</h1>
@@ -149,7 +150,6 @@
 
 
   <!-- build:js assets/js/main.js -->
-  <script src="assets/js/libs/jquery-2.0.3.js"></script>
   <script src="assets/js/app/main.js"></script>
   <!-- endbuild -->
 
