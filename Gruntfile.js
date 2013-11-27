@@ -74,6 +74,7 @@ module.exports = function(grunt) {
               'assets/fonts/**',
               'favicon.png',
               'robots.txt',
+              '.htaccess',
               '*'
             ],
             dest: '<%= cfg.dist %>'
