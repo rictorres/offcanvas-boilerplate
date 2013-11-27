@@ -136,6 +136,16 @@ module.exports = function(grunt) {
       }
     },
 
+    imageoptim: {
+      dist: {
+        options: {
+          jpegMini: false,
+          imageAlpha: true
+        },
+        src: ['<%= cfg.dist %>/<%= cfg.img %>', '<%= cfg.dist %>/<%= cfg.img %>']
+      }
+    },
+
     less: {
       dev: {
         options: {
@@ -189,6 +199,6 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'cssmin', 'concat', 'uglify', 'copy:dist', 'usemin', 'autoprefixer:dist', 'csso', 'htmlcompressor']);
+  grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'cssmin', 'concat', 'uglify', 'copy:dist', 'usemin', 'autoprefixer:dist', 'csso', 'htmlcompressor', 'imageoptim']);
   grunt.registerTask('server', ['concurrent:std']);
 };
