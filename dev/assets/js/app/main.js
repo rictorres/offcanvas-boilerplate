@@ -23,7 +23,8 @@
     var _init      = false,
         app        = {},
         container  = $$( '#container' ),
-        content    = $$( '#content' );
+        content    = $$( '#content' ),
+        eventType  = Modernizr.touch ? 'touchstart' : 'click';
 
     app.init = function() {
 
@@ -46,7 +47,7 @@
             document.body.classList.remove( 'has-sidebar-open' );
           }, 400 );
           [].forEach.call( $( '.content, .content-bar' ), function( elem ) {
-            elem.removeEventListener( 'click', app.closeSidebar, false );
+            elem.removeEventListener( eventType, app.closeSidebar, false );
           });
         }
       };
@@ -69,14 +70,14 @@
         setTimeout( function() {
           if ( document.body.classList.contains( 'has-sidebar-open' ) ) {
             [].forEach.call( $( '.content, .content-bar' ), function( elem ) {
-              elem.addEventListener( 'click', app.closeSidebar, false );
+              elem.addEventListener( eventType, app.closeSidebar, false );
             });
           }
         }, 25 );
       };
 
       [].forEach.call( $( '.btn-sidebar-toggle' ), function( elem ) {
-        elem.addEventListener( 'click', app.openSidebar, false );
+        elem.addEventListener( eventType, app.openSidebar, false );
       });
     };
 
