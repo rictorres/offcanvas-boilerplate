@@ -35,10 +35,7 @@
 
       app.closeSidebar = function( event ) {
         if ( event.target.classList.contains( 'content' ) || event.target.classList.contains( 'content-bar' ) ) {
-          container.classList.remove( 'has-sidebar-toright' );
-          container.classList.remove( 'has-sidebar-toleft' );
-          container.classList.remove( 'has-sidebar-push' );
-          container.classList.remove( 'has-sidebar-slideover' );
+          container.classList.remove( 'has-sidebar-toright', 'has-sidebar-toleft', 'has-sidebar-push', 'has-sidebar-slideover' );
           [].forEach.call( $( '.btn-sidebar-toggle.is-active' ), function( elem ) {
             elem.classList.remove( 'is-active' );
           });
