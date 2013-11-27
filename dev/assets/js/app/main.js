@@ -52,12 +52,24 @@
         }
       };
 
-      app.openSidebar = function( event ) {
-        event.preventDefault();
+      app.openSidebar = function( event, options ) {
+        var target, fx, dir;
 
-        var target = event.target.getAttribute( 'data-target' ),
-            fx = event.target.getAttribute( 'data-fx' ),
-            dir = event.target.getAttribute( 'data-dir' );
+        if ( event ) {
+          event.preventDefault();
+
+          target = event.target.getAttribute( 'data-target' );
+          fx = event.target.getAttribute( 'data-fx' );
+          dir = event.target.getAttribute( 'data-dir' );
+        }
+        else if ( options ) {
+          target = options._target;
+          fx     = options._fx;
+          dir    = options._dir;
+        }
+        else {
+          return;
+        }
 
         [].forEach.call( $( '[data-target=' + target + ']' ), function( elem ) {
           elem.classList.toggle( 'is-active' );
@@ -79,6 +91,43 @@
       [].forEach.call( $( '.btn-sidebar-toggle' ), function( elem ) {
         elem.addEventListener( eventType, app.openSidebar, false );
       });
+
+      app.handleSwipe = function( event ) {
+        var isOpen = document.body.classList.contains( 'has-sidebar-open' );
+
+        if ( !isOpen ) {
+          var target, fx, dir;
+          if ( event.type === 'swiperight' ) {
+            target = 'sidebar-left';
+            fx     = 'push';
+            dir    = 'toright';
+          }
+          else if ( event.type === 'swipeleft' ) {
+            target = 'sidebar-right';
+            fx     = 'slideover';
+            dir    = 'toleft';
+          }
+          var options = {
+            _target: target,
+            _fx: fx,
+            _dir: dir
+          };
+          app.openSidebar(null, options);
+        }
+      };
+
+      var swipeRight = new Hammer( content, {
+        drag_block_horizontal: true
+      }).on( 'swiperight', function( event ) {
+        app.handleSwipe( event );
+      });
+
+      var swipeLeft = new Hammer( content, {
+        drag_block_horizontal: true
+      }).on( 'swipeleft', function( event ) {
+        app.handleSwipe( event );
+      });
+
     };
 
     return app;
