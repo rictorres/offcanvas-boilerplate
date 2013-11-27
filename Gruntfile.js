@@ -109,13 +109,11 @@ module.exports = function(grunt) {
     jshint: {
       files: ['Gruntfile.js', '<%= cfg.dev %>/<%= cfg.js %>/**/*.js'],
       options: {
-        ignores: ['<%= cfg.dev %>/<%= cfg.js %>/libs/*.js'],
+        ignores: ['<%= cfg.dev %>/<%= cfg.js %>/vendor/*.js', '<%= cfg.dev %>/<%= cfg.js %>/shim/*.js'],
         curly: true,
         eqeqeq: true,
         immed: true,
         newcap: true,
-        // undef: true,
-        unused: true,
         eqnull: true,
         sub: true,
         browser: true,
