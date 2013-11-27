@@ -8,6 +8,12 @@
   window.$$   = document.querySelector.bind( document );
 
 
+  Modernizr.load({
+    test: Modernizr.classlist,
+    nope: 'assets/js/shim/classlist.js'
+  });
+
+
   /* =============================================================================
     Application
   ================================================================================ */
