@@ -27,6 +27,7 @@
     "grunt-concurrent": "~0.4.2",
     "connect-livereload": "~0.3.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-cssmin": "~0.7.0"
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-ftp-deploy": "~0.1.1"
   }
 }

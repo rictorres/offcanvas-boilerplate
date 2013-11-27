@@ -195,10 +195,31 @@ module.exports = function(grunt) {
           logConcurrentOutput: true
         }
       }
+    },
+
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'rictorres.com',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: '<%= cfg.dist %>/',
+        dest: '/public_html/dubizzle-test/',
+        exclusions: [
+          '../**/.DS_Store',
+          '../**/Thumbs.db',
+          '../.git',
+          '../.gitignore',
+          '../README.md',
+          '../src'
+        ]
+      }
     }
 
   });
 
   grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'cssmin', 'concat', 'uglify', 'copy:dist', 'usemin', 'autoprefixer:dist', 'csso', 'htmlcompressor', 'imageoptim']);
   grunt.registerTask('server', ['concurrent:std']);
+  grunt.registerTask('deploy', ['ftp-deploy']);
 };
