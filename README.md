@@ -28,6 +28,9 @@ Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to op
 
 ## Documentation
 
+### General
+- Sidebars open with swipe right/left (like Facebook)
+
 ### HTML
 - Sidebar options are set using data attributes: `data-target`, `data-fx`, `data-dir`
 
@@ -35,7 +38,7 @@ Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to op
 - CSS guidelines on [GUIDELINES.md](https://github.com/rictorres/dubizzle-test/blob/master/GUIDELINES.md)
 - Using a mix of [OOCSS](https://github.com/stubbornella/oocss/wiki) and [SMACSS](http://smacss.com/)
 - Toggle sidebar button from [http://codepen.io/rictorres/full/ycudz](http://codepen.io/rictorres/full/ycudz)
-- CSS detection provided by [Modernizr](http://modernizr.com)
+- Feature detection provided by [Modernizr](http://modernizr.com)
 - Using CSS Flexbox with fallback for IE9
 - Sidebar show/hide is running @ [60fps](http://d.pr/i/tFvP) but when content is added (large images, videos, etc) the FPS [drops](http://d.pr/i/3vl0) considerably
 - Using hardware acceleration whenever possible: `translateZ(0)`
@@ -43,7 +46,7 @@ Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to op
 ### Javascript
 - Support for touch gestures provided by [Hammer.js](https://github.com/EightMedia/hammer.js)
 - When Javascript is disabled or not loaded, the webapp degrades gracefully
-- Using `element.classList` with [fallback](https://gist.github.com/devongovett/1381839) for IE9
+- Using `element.classList` with [fallback](https://gist.github.com/devongovett/1381839) for IE9. [Performance gains?](http://www.youtube.com/watch?v=hZJacl2VkKo)
 
 
 ## Tested on
@@ -64,7 +67,10 @@ Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to op
 
 ## Author
 
+![Hi](http://gravatar.com/avatar/414738201197c2a837b986748c80e16e?s=90)
+
 **Ricardo Torres** (Front-end Engineer)
 
+- [http://rictorres.com](http://rictorres.com)
 - [http://twitter.com/RicardoTorres0](http://twitter.com/RicardoTorres0)
 - [http://github.com/rictorres](http://github.com/rictorres)
