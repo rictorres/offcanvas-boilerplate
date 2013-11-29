@@ -1,5 +1,9 @@
-# [Offcanvas Boilerplate](http://github.com/rictorres/offcanvas-boilerplate)
+# [Offcanvas Boilerplate](http://rictorres.com/projects/offcanvas-boilerplate)
 A lightweight mobile first approach.
+
+## Demo
+- [http://rictorres.com/projects/offcanvas-boilerplate](http://rictorres.com/projects/offcanvas-boilerplate)
+
 
 ## Running
 ```bash
