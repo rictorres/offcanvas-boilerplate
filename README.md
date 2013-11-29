@@ -1,12 +1,10 @@
-# [Yet Another Weather Webapp](http://rictorres.com/dubizzle-test)
+# [Offcanvas Boilerplate](http://github.com/rictorres/offcanvas-boilerplate)
 A Dubizzle test.
-
-![Yaww icon](http://rictorres.com/dubizzle-test/assets/img/app/114x114.png)
 
 ## Running
 ```bash
-$ git clone https://github.com/rictorres/dubizzle-test
-$ cd dubizzle-test
+$ git clone https://github.com/rictorres/offcanvas-boilerplate
+$ cd offcanvas-boilerplate
 $ npm install
 $ grunt server
 Started connect web server on 127.0.0.1:9002.
@@ -23,19 +21,22 @@ $ grunt build
 - [ImageOptim](http://imageoptim.com/)
 - [ImageAlpha](http://pngmini.com/)
 
-Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to optimise images (see [comparison](http://jamiemason.github.io/ImageOptim-CLI/)), but you can easily disable the task `imageoptim` in [`Gruntfile.js`](https://github.com/rictorres/dubizzle-test/blob/master/Gruntfile.js).
+Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to optimise images (see [comparison](http://jamiemason.github.io/ImageOptim-CLI/)), but you can easily disable the task `imageoptim` in [`Gruntfile.js`](https://github.com/rictorres/offcanvas-boilerplate/blob/master/Gruntfile.js).
 
 
 ## Documentation
 
 ### General
-- Sidebars open with swipe right/left (like Facebook)
+- Sidebars open with swipe right/left gestures (like Facebook)
 
 ### HTML
-- Sidebar options are set using data attributes: `data-target`, `data-fx`, `data-dir`
+- Sidebar options are set using `data` attributes:
+  - `data-target`: 'sidebar-left' or 'sidebar-right'
+  - `data-fx`: 'push' or 'slideover'
+  - `data-dir`: 'toleft' or 'toright'
 
 ### CSS
-- CSS guidelines on [GUIDELINES.md](https://github.com/rictorres/dubizzle-test/blob/master/GUIDELINES.md)
+- CSS guidelines on [GUIDELINES.md](https://github.com/rictorres/offcanvas-boilerplate/blob/master/GUIDELINES.md)
 - Using a mix of [OOCSS](https://github.com/stubbornella/oocss/wiki) and [SMACSS](http://smacss.com/)
 - Toggle sidebar button from [http://codepen.io/rictorres/full/ycudz](http://codepen.io/rictorres/full/ycudz)
 - Feature detection provided by [Modernizr](http://modernizr.com)
@@ -44,8 +45,8 @@ Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to op
 - Using hardware acceleration whenever possible: `translateZ(0)`
 
 ### Javascript
-- Support for touch gestures provided by [Hammer.js](https://github.com/EightMedia/hammer.js)
 - When Javascript is disabled or not loaded, the webapp degrades gracefully
+- Support for touch gestures provided by [Hammer.js](https://github.com/EightMedia/hammer.js)
 - Using `element.classList` with [fallback](https://gist.github.com/devongovett/1381839) for IE9. [Performance gains?](http://www.youtube.com/watch?v=hZJacl2VkKo)
 
 
