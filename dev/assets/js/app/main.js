@@ -18,7 +18,7 @@
     Application
   ================================================================================ */
 
-  window.Yaww = (function() {
+  window.OffCanvas = (function() {
 
     var _init      = false,
         app        = {},
@@ -138,7 +138,7 @@
   })();
 
   if ( window.addEventListener ) {
-    window.addEventListener( 'DOMContentLoaded', window.Yaww.init, false );
+    window.addEventListener( 'DOMContentLoaded', window.OffCanvas.init, false );
   }
 
 }( this, this.document ) );
