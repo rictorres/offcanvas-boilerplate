@@ -449,7 +449,8 @@ video {
   .has-sidebar-open & {
     overflow: hidden; // prevent scrollbars
 
-    height: auto; // resets the scroll position to 0 :(
+    height: auto;
+    // if set to 100% resets the scroll position to 0 :(
     // but also solves a bug on mobile devices, making the content not scrollable
 
     &::after {
