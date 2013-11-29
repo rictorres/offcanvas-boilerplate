@@ -1,5 +1,5 @@
 # [Offcanvas Boilerplate](http://github.com/rictorres/offcanvas-boilerplate)
-A Dubizzle test.
+A lightweight mobile first approach.
 
 ## Running
 ```bash
