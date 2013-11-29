@@ -50,14 +50,20 @@
       };
 
       app.openSidebar = function( event, options ) {
-        var target, fx, dir;
+        var srcElem, target, fx, dir;
 
         if ( event ) {
           event.preventDefault();
 
-          target = event.target.getAttribute( 'data-target' );
-          fx = event.target.getAttribute( 'data-fx' );
-          dir = event.target.getAttribute( 'data-dir' );
+          srcElem = event.target;
+
+          if ( !event.target.classList.contains( 'btn-sidebar-toggle' ) ) {
+            srcElem = event.target.offsetParent;
+          }
+
+          target = srcElem.getAttribute( 'data-target' );
+          fx     = srcElem.getAttribute( 'data-fx' );
+          dir    = srcElem.getAttribute( 'data-dir' );
         }
         else if ( options ) {
           target = options._target;
@@ -109,7 +115,7 @@
             _fx: fx,
             _dir: dir
           };
-          app.openSidebar(null, options);
+          app.openSidebar( null, options );
         }
       };
 
