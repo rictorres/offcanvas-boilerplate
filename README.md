@@ -79,3 +79,6 @@ Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to op
 - [http://rictorres.com](http://rictorres.com)
 - [http://twitter.com/RicardoTorres0](http://twitter.com/RicardoTorres0)
 - [http://github.com/rictorres](http://github.com/rictorres)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rictorres/offcanvas-boilerplate/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
