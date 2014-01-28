@@ -95,42 +95,6 @@
         elem.addEventListener( eventType, app.openSidebar, false );
       });
 
-      app.handleSwipe = function( event ) {
-        var isOpen = document.body.classList.contains( 'has-sidebar-open' );
-
-        if ( !isOpen ) {
-          var target, fx, dir;
-          if ( event.type === 'swiperight' ) {
-            target = 'sidebar-left';
-            fx     = 'push';
-            dir    = 'toright';
-          }
-          else if ( event.type === 'swipeleft' ) {
-            target = 'sidebar-right';
-            fx     = 'slideover';
-            dir    = 'toleft';
-          }
-          var options = {
-            _target: target,
-            _fx: fx,
-            _dir: dir
-          };
-          app.openSidebar( null, options );
-        }
-      };
-
-      var swipeRight = new Hammer( content, {
-        drag_block_horizontal: true
-      }).on( 'swiperight', function( event ) {
-        app.handleSwipe( event );
-      });
-
-      var swipeLeft = new Hammer( content, {
-        drag_block_horizontal: true
-      }).on( 'swipeleft', function( event ) {
-        app.handleSwipe( event );
-      });
-
     };
 
     return app;
