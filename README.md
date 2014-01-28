@@ -1,4 +1,4 @@
-# [Offcanvas Boilerplate](http://rictorres.com/projects/offcanvas-boilerplate) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# [Offcanvas Boilerplate](http://rictorres.com/projects/offcanvas-boilerplate) [![Build Status](https://secure.travis-ci.org/rictorres/offcanvas-boilerplate.png?branch=master)](https://travis-ci.org/rictorres/offcanvas-boilerplate) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 A lightweight mobile first approach.
 
 ## Demo
