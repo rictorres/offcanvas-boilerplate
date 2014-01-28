@@ -1,13 +1,11 @@
 {
   "name": "offcanvas-boilerplate",
-  "version": "0.0.1",
-  "author": "Ricardo Torres <ricardo@rictorres.com>",
-  "contributors": [
-    {
-      "name": "Ricardo Torres",
-      "email": "ricardo@rictorres.com"
-    }
-  ],
+  "version": "0.0.2",
+  "author": "Ricardo Torres",
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/rictorres/offcanvas-boilerplate.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "matchdep": "~0.3.0",
