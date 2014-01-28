@@ -21,17 +21,7 @@ $ grunt build
 ```
 
 
-## Requirements
-- [ImageOptim](http://imageoptim.com/)
-- [ImageAlpha](http://pngmini.com/)
-
-Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to optimise images (see [comparison](http://jamiemason.github.io/ImageOptim-CLI/)), but you can easily disable the task `imageoptim` in [`Gruntfile.js`](https://github.com/rictorres/offcanvas-boilerplate/blob/master/Gruntfile.js).
-
-
 ## Documentation
-
-### General
-- Sidebars open with swipe right/left gestures (like Facebook)
 
 ### HTML
 - Sidebar options are set using `data` attributes:
@@ -49,8 +39,7 @@ Using [`grunt-imageoptim`](https://github.com/JamieMason/grunt-imageoptim) to op
 - Using hardware acceleration whenever possible: `translateZ(0)`
 
 ### Javascript
-- When Javascript is disabled or not loaded, the webapp degrades gracefully
-- Support for touch gestures provided by [Hammer.js](https://github.com/EightMedia/hammer.js)
+- When Javascript is disabled or not loaded, it degrades gracefully
 - Using `element.classList` with [fallback](https://gist.github.com/devongovett/1381839) for IE9. [Performance gains?](http://www.youtube.com/watch?v=hZJacl2VkKo)
 
 
