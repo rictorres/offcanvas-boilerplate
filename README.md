@@ -35,7 +35,7 @@ $ grunt build
 - Toggle sidebar button from [http://codepen.io/rictorres/full/ycudz](http://codepen.io/rictorres/full/ycudz)
 - Feature detection provided by [Modernizr](http://modernizr.com)
 - Using CSS Flexbox with fallback for IE9
-- Sidebar show/hide is running @ [60fps](http://d.pr/i/tFvP) but when content is added (large images, videos, etc) the FPS [drops](http://d.pr/i/3vl0) considerably
+- Sidebar show/hide is running @ [60fps](http://d.pr/i/tFvP) but when content is added (large images, videos, etc) the frame rate [drops](http://d.pr/i/3vl0) considerably
 - Using hardware acceleration whenever possible: `translateZ(0)`
 
 ### Javascript
