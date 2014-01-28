@@ -135,16 +135,6 @@ module.exports = function(grunt) {
       }
     },
 
-    imageoptim: {
-      dist: {
-        options: {
-          jpegMini: false,
-          imageAlpha: true
-        },
-        src: ['<%= cfg.dist %>/<%= cfg.img %>', '<%= cfg.dist %>/<%= cfg.img %>']
-      }
-    },
-
     less: {
       dev: {
         options: {
