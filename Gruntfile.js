@@ -198,6 +198,6 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'cssmin', 'concat', 'uglify', 'copy:dist', 'usemin', 'autoprefixer:dist', 'csso', 'htmlcompressor', 'imageoptim']);
+  grunt.registerTask('build', ['clean:dist', 'less', 'useminPrepare', 'cssmin', 'concat', 'uglify', 'copy:dist', 'usemin', 'autoprefixer:dist', 'csso', 'htmlcompressor']);
   grunt.registerTask('server', ['concurrent:std']);
 };
