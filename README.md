@@ -85,4 +85,4 @@ For more information on SemVer, please visit [http://semver.org/](http://semver.
 
 ## License
 
-[MIT License](https://github.com/rictorres/offcanvas-boilerplate/blob/master/LICENSE.md) © Ricardo Torres
+[MIT License](http://rictorres.mit-license.org/) © Ricardo Torres
