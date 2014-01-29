@@ -1,10 +1,13 @@
 {
   "name": "offcanvas-boilerplate",
-  "version": "0.0.2",
+  "title": "Offcanvas Boilerplate",
+  "description": "Mobile first offcanvas boilerplate for websites and apps.",
   "author": "Ricardo Torres",
+  "homepage": "http://rictorres.com/projects/offcanvas-boilerplate",
+  "version": "0.0.2",
   "repository": {
     "type" : "git",
-    "url" : "http://github.com/rictorres/offcanvas-boilerplate.git"
+    "url" : "https://github.com/rictorres/offcanvas-boilerplate.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
