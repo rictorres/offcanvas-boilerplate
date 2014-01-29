@@ -5,6 +5,10 @@ A lightweight mobile first approach.
 - [http://rictorres.com/projects/offcanvas-boilerplate](http://rictorres.com/projects/offcanvas-boilerplate)
 
 
+## Usage
+Download latest version or build it from source. (TODO)
+
+
 ## Running
 ```bash
 $ git clone https://github.com/rictorres/offcanvas-boilerplate
@@ -43,20 +47,27 @@ $ grunt build
 - Using `element.classList` with [fallback](https://gist.github.com/devongovett/1381839) for IE9. [Performance gains?](http://www.youtube.com/watch?v=hZJacl2VkKo)
 
 
-## Tested on
-- Android 4.2.2 Stock Browser on Galaxy S4
-- Android 4.2.2 Chrome 31 on Galaxy S4
-- Android 4.2.2 Firefox 25 on Galaxy S4
-- iOS 7 Safari on iPhone 4
-- iOS 7 Chrome on iPhone 4
-- MacOSX 10.9 Chrome 33
-- MacOSX 10.9 Safari 7
-- MacOSX 10.9 Firefox 25
-- MacOSX 10.9 Opera 18
-- Windows 7 Chrome 31
-- Windows 7 Firefox 25
-- Windows 7 IE 10
-- Windows 7 IE 9
+## Support
+- Latest Chrome, Firefox, Safari, Opera and IE9+
+- Chrome, Android Browser and Firefox 25+ on Android 4+
+- Chrome and Safari on iOS 7
+
+
+## Versioning
+
+For transparency and insight into our release cycle, and for striving to maintain backward compatibility, this app will be maintained under the Semantic Versioning guidelines as much as possible.
+
+Releases will be numbered with the following format:
+
+`<major>.<minor>.<patch>`
+
+And constructed with the following guidelines:
+
+* Breaking backward compatibility bumps the major (and resets the minor and patch)
+* New additions without breaking backward compatibility bumps the minor (and resets the patch)
+* Bug fixes and misc changes bumps the patch
+
+For more information on SemVer, please visit [http://semver.org/](http://semver.org/).
 
 
 ## Author
@@ -71,3 +82,7 @@ $ grunt build
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rictorres/offcanvas-boilerplate/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+
+## License
+
+[MIT License](https://github.com/rictorres/offcanvas-boilerplate/blob/master/LICENSE.md) © Ricardo Torres
